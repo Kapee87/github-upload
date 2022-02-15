@@ -8,12 +8,12 @@
     <link rel="shortcut icon" href="./assets/faviconGXC.PNG" type="image/x-icon">
     <link rel="stylesheet" href="./Style/style.css">
     <link rel="stylesheet" href="./Style/hamburger.css">
-    <link rel="stylesheet" href="./script/script.js">
+
 </head>
 <body>
     <Header>
-        <nav class="menu-nav">
-            <img src="./assets/logo-nav.PNG" alt="Logo de barra de navegación" class="logo-nav">
+        <div class="menu-nav">
+            <a href="./index.html"><img src="./assets/logo-nav.PNG" alt="Logo de barra de navegación" class="logo-nav"></a>
             <form action="form-nav" class="search-container">
                 <input type="text" class="search-nav" placeholder="Buscar juegos">
                 <div class="lupa-nav">
@@ -27,8 +27,31 @@
                     </span>
                 </button>
 
-</div>
-        </nav>
+            </div>
+           
+        </div>
+        <div class="drop-down-menu hidden">
+            <nav>
+                <ul>
+                    <a href="" class="a-drop">
+                        <li class="li-drop">Juegos</li>
+                    </a>
+                    <a href="" class="a-drop">
+                        <li class="li-drop">Desafíos</li>
+                    </a>
+                    <a href="" class="a-drop">
+                        <li class="li-drop">Populares</li>
+                    </a>
+                    <a href="" class="a-drop">
+                        <li class="li-drop">Crear</li>
+                    </a>
+                </ul>
+                <button class="get-started">
+                    Iniciar sesión
+                </button>
+            </nav>
+              </div>
+              <script src="./script/script.js"></script>
     </Header>
 </body>
 </html>

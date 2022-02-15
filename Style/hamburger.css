@@ -8,7 +8,7 @@
   overflow-x: visible;
  }
  .hamburger {
-  padding: 12px 12px;
+  padding: 10px 10px;
   display: inline-block;
   cursor: pointer;
   transition-property: opacity, filter;
@@ -29,7 +29,7 @@
   .hamburger.is-active .hamburger-inner,
   .hamburger.is-active .hamburger-inner::before,
   .hamburger.is-active .hamburger-inner::after {
-    background: linear-gradient(#000000, #000000); }
+    background: linear-gradient(#ffffff, #ffffff); }
 
 .hamburger-box {
   display: inline-block;
@@ -39,10 +39,10 @@
 .hamburger-inner {
   display: block;
   top: 50%;
-  margin-top: -1.5px; }
+  margin-top: -10px; }
   .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
     width: 23px;
-    height: 2px;
+    height: 4px;
     background: linear-gradient(#fcfcfc, #fdfdfdc7);
     border-radius: 4px;
     position: absolute;
@@ -53,12 +53,12 @@
     content: "";
     display: block; }
   .hamburger-inner::before {
-    top: -7.5px; }
+    top: -6px; }
   .hamburger-inner::after {
-    bottom: -7.5px; }
+    bottom: -6.5px; }
 
 /* Collapse */
-   .hamburger--collapse .hamburger-inner {
+   /* .hamburger--collapse .hamburger-inner {
     top: auto;
     bottom: 0;
     transition-duration: 0.13s;
@@ -81,4 +81,4 @@
     .hamburger--collapse.is-active .hamburger-inner::before {
       top: 0;
       transform: rotate(-90deg);
-      transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1); }
+      transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1); } */
