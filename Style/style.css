@@ -60,7 +60,7 @@ header .menu-nav .hambursize{
 /* Configuracion del menú desplegable, estilo y animación */
 header .drop-down-menu{
     background-color: #251F32;
-    height: 44vh;
+    height: 19rem;
     display: grid;
     
 }
@@ -71,12 +71,14 @@ header .show{
     display: grid;
     animation:drop-down 0.5s ease-in;
 }
+
 @keyframes drop-down{
 0%{ margin-top:-100%;opacity: 0;}
 50%{margin-top: -50%;opacity: 0;}
 90%{opacity: 0.5;}
 100%{margin-top:0;opacity: 1; }
 }
+
 header .drop-down-menu nav ul{
     display: flex;
     flex-direction: column;
@@ -110,4 +112,72 @@ header .drop-down-menu nav .get-started{
 }
 header .drop-down-menu nav .get-started:hover{
     background-color: #82B000;
+}
+
+/* Configuraciones para el responsive */
+@media (min-width:900px){
+    header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+    header .menu-nav{
+        justify-content: space-between;
+        padding-left: 60px;
+        height: 4.1rem;
+    }
+    header .menu-nav .hambursize{
+        display: none;
+    }
+    header .menu-nav .search-container{
+        position: absolute;
+        margin-left: 25rem;
+    }
+    header .menu-nav .search-container .search-nav{
+        width: 23vw;
+        height: 2.3rem;
+    }
+    header .menu-nav .search-container .search-nav, header .menu-nav .search-container .lupa-nav{
+        padding:0 1rem;
+    }
+    
+    header .hidden{
+        display: flex;
+        float: inline-start;
+    }
+    header .drop-down-menu{
+        flex-direction: row;
+        height: auto;
+        margin-top: -4.5rem;
+        margin-left: 10.2rem;
+        
+    }
+    header .drop-down-menu nav ul{
+        flex-direction: row;
+        gap: 1rem;
+    }
+    header .drop-down-menu nav ul .a-drop .li-drop{
+        border: none;
+    }
+    header .drop-down-menu nav ul .a-drop{
+        height: 2.9rem;
+    }
+    header .drop-down-menu nav ul .a-drop:hover{
+        animation: hover-nav 0.2s;
+        transform: translate(0, -6px);
+    }
+    @keyframes hover-nav{
+        0%{transform: translate(0px);}
+        100%{transform: translate(0, -6px);}
+    }
+    header .drop-down-menu nav ul #a-deploy:hover{
+    animation: none;
+    transform: none;
+    }
+    header .drop-down-menu nav .get-started{
+        position: absolute;
+        margin-top: -3.2rem;
+        margin-left: 58vw;
+    }
 }
