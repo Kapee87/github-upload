@@ -16,6 +16,7 @@ body{
     align-items: center;
     background-color: #251F32;
     width:100vw;
+    justify-content: center;
 }
 .search-container{
     display: flex;
@@ -27,7 +28,9 @@ body{
 header .menu-nav .logo-nav{
     height: 3.5rem;
     width: 16vw;
-    margin-left: 15px;
+  
+    max-width: 116.35px;
+    max-height: 56px;
 }
 header .menu-nav .search-container .search-nav{
     width: 65vw;
