@@ -6,11 +6,12 @@
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
 body{
     background-color: rgb(28, 23, 38);
-   
+    color:white;
 }
-
+/* Menú de navegacion, logo, búsqueda, etc */
 .menu-nav{
     display: flex;
     align-items: center;
@@ -28,7 +29,6 @@ body{
 header .menu-nav .logo-nav{
     height: 3.5rem;
     width: 16vw;
-  
     max-width: 116.35px;
     max-height: 56px;
 }
@@ -40,9 +40,7 @@ header .menu-nav .search-container .search-nav{
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    
     padding-left: 12px;
-    
 }
 header .menu-nav .search-container .search-nav::placeholder{
     color:rgb(140,125,175)
@@ -50,12 +48,12 @@ header .menu-nav .search-container .search-nav::placeholder{
 header .menu-nav .search-container .lupa-nav{
     display: block;
     position: absolute;
-    
 }
 
 header .menu-nav .hambursize{
     margin-top: -13px;
     margin-bottom: 10px;
+    padding-left: 1rem;
 }
 /* Configuracion del menú desplegable, estilo y animación */
 header .drop-down-menu{
@@ -67,10 +65,37 @@ header .drop-down-menu{
 header .hidden{
     display: none;
 }
+header .sub-hide{
+    display: none;
+}
+
 header .show{
     display: grid;
     animation:drop-down 0.5s ease-in;
 }
+header .sub-drop{
+    background-color: #251F32;
+    position: absolute;
+    width: 12rem;
+    margin-top: 2rem;
+    margin-left: 1rem;
+}
+header .sub-drop .sub-menu{
+  display: flex;
+  flex-direction: column;
+  
+}
+header .sub-drop .sub-menu a .sub-li{
+    display: flex;
+    line-height: 0.2rem;
+    width: 10rem;
+    color:white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size:0.9rem;
+    font-weight: 600;
+}
+
+
 
 @keyframes drop-down{
 0%{ margin-top:-100%;opacity: 0;}
@@ -79,6 +104,12 @@ header .show{
 100%{margin-top:0;opacity: 1; }
 }
 
+@keyframes drop-down-sub{
+    0%{height: 0;opacity: 0;}
+    50%{height: 30px;}
+    100%{height: 89.6px;opacity: 1; }
+    } 
+
 header .drop-down-menu nav ul{
     display: flex;
     flex-direction: column;
@@ -86,7 +117,7 @@ header .drop-down-menu nav ul{
     gap: 2.2rem;
     padding: 1.6rem 0 0 1.5rem;
 }
-header .drop-down-menu nav ul .a-drop{
+header .drop-down-menu nav ul .a-drop, header .sub-drop .sub-menu a{
 text-decoration: none;
 width: 100%;
 height: 1.5rem;
@@ -114,7 +145,68 @@ header .drop-down-menu nav .get-started:hover{
     background-color: #82B000;
 }
 
+/* Configuracion de estilos de seccion principal RECOMENDADOS */
+.recomendados {
+    margin: 1.5rem 0; 
+    width: 100vw;
+    padding: 0 120px;
+}
+.recomendados h2{
+font-size: 1.4rem;
+font-weight: 700;
+}
+
+.recomendados .reco-div{
+    margin-top: 2rem;
+    margin-left: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.recomendados .reco-div .sub-reco .reco-container img{
+    width:18.5vw;
+    height: 27vh;
+}
+
+.recomendados .reco-div .sub-reco{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin: 1rem;
+}
+.recomendados .reco-div .sub-reco .reco-tags{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0.6rem 0;
+}
+
+.recomendados .reco-div .sub-reco .reco-tags .tags{
+    background-color:rgb(46, 39, 63);
+    border-radius:20px;
+    box-shadow: black 1px;
+    padding: 0.5rem;
+}
+.recomendados .reco-div .sub-reco .reco-tags p{
+    font-size: 0.7rem;
+    line-height: 15px;
+    color: #BDFF00;
+    font-weight: 600;
+}
+
+.recomendados .reco-div .sub-reco .reco-container img:hover{ 
+    transform: scale(130%);
+}
+
+
 /* Configuraciones para el responsive */
+@media (max-width:900px){
+header .menu-nav{
+    justify-content: flex-start;
+}
+header .search-container .search-nav{
+    width: 70vw !important;
+}
+}
 @media (min-width:900px){
     header{
         display: flex;
@@ -132,10 +224,10 @@ header .drop-down-menu nav .get-started:hover{
     }
     header .menu-nav .search-container{
         position: absolute;
-        margin-left: 25rem;
+        margin-left: 45vw;
     }
     header .menu-nav .search-container .search-nav{
-        width: 23vw;
+        width: 30vw;
         height: 2.3rem;
     }
     header .menu-nav .search-container .search-nav, header .menu-nav .search-container .lupa-nav{
@@ -146,12 +238,15 @@ header .drop-down-menu nav .get-started:hover{
         display: flex;
         float: inline-start;
     }
+    header .drop-down-menu nav ul #a-deploy:hover ~ .sub-drop {
+        display: grid;
+        animation:drop-down-sub 0.5s ease-in;
+    }
     header .drop-down-menu{
         flex-direction: row;
         height: auto;
         margin-top: -4.5rem;
         margin-left: 10.2rem;
-        
     }
     header .drop-down-menu nav ul{
         flex-direction: row;
@@ -159,6 +254,8 @@ header .drop-down-menu nav .get-started:hover{
     }
     header .drop-down-menu nav ul .a-drop .li-drop{
         border: none;
+        font-size: 0.9rem;
+        font-weight: bolder;
     }
     header .drop-down-menu nav ul .a-drop{
         height: 2.9rem;
@@ -178,6 +275,73 @@ header .drop-down-menu nav .get-started:hover{
     header .drop-down-menu nav .get-started{
         position: absolute;
         margin-top: -3.2rem;
-        margin-left: 58vw;
+        margin-left: 66vw;
+    }
+}
+@media (min-width:1324px){
+    header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+    header .menu-nav{
+        justify-content: space-between;
+        padding-left: 60px;
+        height: 4.1rem;
+    }
+    header .menu-nav .hambursize{
+        display: none;
+    }
+    header .menu-nav .search-container{
+        position: absolute;
+        margin-left: 28vw;
+    }
+    header .menu-nav .search-container .search-nav{
+        width: 50vw;
+        height: 2.3rem;
+    }
+    header .menu-nav .search-container .search-nav, header .menu-nav .search-container .lupa-nav{
+        padding:0 1rem;
+    }
+    
+    header .hidden{
+        display: flex;
+        float: inline-start;
+    }
+    header .drop-down-menu{
+        flex-direction: row;
+        height: auto;
+        margin-top: -4.5rem;
+        margin-left: 10.2rem;
+    }
+    header .drop-down-menu nav ul{
+        flex-direction: row;
+        gap: 1rem;
+    }
+    header .drop-down-menu nav ul .a-drop .li-drop{
+        border: none;
+        font-size: 0.9rem;
+        font-weight: bolder;
+    }
+    header .drop-down-menu nav ul .a-drop{
+        height: 2.9rem;
+    }
+    header .drop-down-menu nav ul .a-drop:hover{
+        animation: hover-nav 0.2s;
+        transform: translate(0, -6px);
+    }
+    @keyframes hover-nav{
+        0%{transform: translate(0px);}
+        100%{transform: translate(0, -6px);}
+    }
+    header .drop-down-menu nav ul #a-deploy:hover{
+    animation: none;
+    transform: none;
+    }
+    header .drop-down-menu nav .get-started{
+        position: absolute;
+        margin-top: -3.2rem;
+        margin-left: 75vw;
     }
 }
