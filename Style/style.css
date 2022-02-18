@@ -150,6 +150,9 @@ header .drop-down-menu nav .get-started:hover{
     margin: 1.5rem 0; 
     width: 100vw;
     padding: 0 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 .recomendados h2{
 font-size: 1.4rem;
@@ -163,9 +166,21 @@ font-weight: 700;
     flex-wrap: wrap;
 }
 
+.recomendados .reco-div .sub-reco .reco-container{
+width:18.5vw;
+height: 27vh;   
+overflow: hidden;
+transition: all 500ms ease;
+}
+
+
 .recomendados .reco-div .sub-reco .reco-container img{
     width:18.5vw;
     height: 27vh;
+    transition: all 500ms ease;
+}
+.recomendados .reco-div .sub-reco .reco-container img:hover{
+    transform: scale(1.2);
 }
 
 .recomendados .reco-div .sub-reco{
@@ -197,6 +212,61 @@ font-weight: 700;
     transform: scale(130%);
 }
 
+/* Caratula al pasar el mouse por la imagen */
+
+/* .recomendados .sub-reco .reco-container .cover{
+    display: none;  
+}
+
+.recomendados .sub-reco .reco-container .cover .button .square{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 20px;
+    background-color:#a0da03;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recomendados .sub-reco .reco-container .cover .button .square .triangle{
+    width: 0px;
+    height: 0px;
+    border-bottom: 15px solid rgb(28, 23, 38);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    transform: rotate(90deg);
+}
+.recomendados .sub-reco .reco-container .cover .button .square:hover{
+background-color: #bdff09;
+box-shadow: black 0px 5px 5px;
+}
+
+
+.recomendados .reco-div .sub-reco .reco-container img:hover ~ .cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    position: absolute;
+    top:10rem;
+    width:18.5rem;
+    height: 28vh;
+    background: linear-gradient(to top, rgba(28, 23, 38, 0.945),transparent);   
+    
+} */
+
+/* Botones de interseccion */
+.recomendados .button-inter{
+    padding: 0.7rem;
+    text-decoration: none;
+    color: white;
+    border: white solid 1px;
+    width: fit-content;
+    align-self: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
 
 /* Configuraciones para el responsive */
 @media (max-width:900px){
@@ -345,3 +415,4 @@ header .search-container .search-nav{
         margin-left: 75vw;
     }
 }
+
